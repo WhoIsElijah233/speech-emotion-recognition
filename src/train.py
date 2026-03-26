@@ -124,10 +124,11 @@ for epoch in range(epochs):
     torch.save(model.state_dict(), 'best_model.pth')
     print(f"Epoch {epoch + 1}: model saved. accuracy: {best_val_acc:.4f}")
 
+  test_acc = calculate_accuracy(test_loader)  # 你需要定义这个
+
   print(f"Epoch {epoch+1} - Loss: {avg_loss:.4f}, val_acc: {val_acc:.4f}, test_acc: {test_acc:.4f}")
 
 
-test_acc = calculate_accuracy(test_loader)  # 你需要定义这个
 # 6 画图
 plt.figure(figsize=(12, 4))
 
